@@ -26,4 +26,70 @@ Notices on a digital platform are quick and easy to access, reduce a lot of pape
 <img src="https://user-images.githubusercontent.com/24708206/195632044-5224d66e-52a0-4fd0-86d8-dbcebe96d111.jpeg" width="200" height="400" >
 </p>
 
+##### Note : Removed app.json which is a expo file u need to create a file like app.json in root with following code
+
+app.json
+
+```bash
+{
+  "expo": {
+    "name": "DN",
+    "slug": "noticeboardapp",
+    "version": "1.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#801212"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "your andriod app identifier"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#801212"
+      },
+      "package": "your andriod app identifier"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "your expo project id"
+      }
+    },
+    "plugins": [
+      "sentry-expo",
+      ["onesignal-expo-plugin",{
+        "mode": "development"
+      }]
+    ],
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "badineni-sai-vardhan",
+            "project": "your project nane",
+            "authToken": "your auth token"
+          }
+        }
+      ]
+    }
+  }
+}
+
+```
+
  
